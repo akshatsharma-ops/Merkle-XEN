@@ -1,0 +1,406 @@
+/* ============================================================
+   Merkle XEN — links page
+   Flat colour blocking, Work Sans, cobalt and ink. Palette and
+   type come from the XEN brand; the print design system governs
+   collateral, not this page.
+   ============================================================ */
+
+:root {
+  --cobalt: #2041ce;
+  --purple: #5d3abf;
+  --blue: #538fe4;
+  --red: #e25454;
+  --grey: #60607d;
+
+  --ink: #05051e;
+  --body: #3a3a55;
+  --muted: #60607d;
+  --paper: #ffffff;
+  --canvas: #f1f1f6;
+  --rule: #d6d6df;
+
+  --pad: clamp(1.25rem, 4vw, 3rem);
+  --radius: 26px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: clamp(0.5rem, 1.6vw, 1.25rem);
+  background: var(--cobalt);
+  color: var(--ink);
+  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.shell {
+  max-width: 1080px;
+  margin: 0 auto;
+  background: var(--canvas);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+/* ---------- top bar ---------- */
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: clamp(1.125rem, 2.5vw, 1.75rem) var(--pad);
+}
+
+.bar__logo {
+  display: block;
+  color: var(--ink);
+  line-height: 0;
+}
+
+.bar__logo svg {
+  width: clamp(112px, 15vw, 156px);
+  height: auto;
+  display: block;
+}
+
+.bar__logo-sup {
+  fill: currentColor;
+  font-family: inherit;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 5.5px;
+}
+
+.bar__pill {
+  padding: 0.4375rem 0.8125rem;
+  border: 1px solid var(--ink);
+  border-radius: 99px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* ---------- lede ---------- */
+
+.lede {
+  position: relative;
+  padding: clamp(1.5rem, 5vw, 3.25rem) var(--pad) clamp(1.75rem, 4vw, 2.75rem);
+}
+
+/* Wedge lifted from the wordmark, as a flat graphic. */
+.lede__wedge {
+  position: absolute;
+  right: var(--pad);
+  bottom: clamp(1.75rem, 4vw, 2.75rem);
+  width: 68px;
+  height: 68px;
+  background: var(--cobalt);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+@media (max-width: 900px) {
+  .lede__wedge {
+    display: none;
+  }
+}
+
+.lede__title {
+  margin: 0;
+  font-size: clamp(2.125rem, 7.2vw, 4.25rem);
+  font-weight: 600;
+  letter-spacing: -0.042em;
+  line-height: 0.98;
+}
+
+.lede__sub {
+  margin: 1.125rem 0 0;
+  max-width: 30ch;
+  font-size: clamp(0.9375rem, 1.6vw, 1.0625rem);
+  color: var(--body);
+}
+
+/* ---------- link rows ---------- */
+
+.links {
+  border-top: 1px solid var(--rule);
+}
+
+.row {
+  --accent: var(--cobalt);
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.25rem 1fr auto;
+  align-items: center;
+  gap: 0 clamp(0.75rem, 2vw, 1.5rem);
+  padding: clamp(1.125rem, 2.4vw, 1.5rem) var(--pad);
+  border-bottom: 1px solid var(--rule);
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 0.12s ease, color 0.12s ease;
+}
+
+.row[data-accent="cobalt"] { --accent: var(--cobalt); }
+.row[data-accent="purple"] { --accent: var(--purple); }
+.row[data-accent="blue"]   { --accent: var(--blue); }
+.row[data-accent="red"]    { --accent: var(--red); }
+.row[data-accent="grey"]   { --accent: var(--grey); }
+
+.row__no {
+  align-self: start;
+  padding-top: 0.375rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.row__body {
+  min-width: 0;
+}
+
+.row__head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+}
+
+.row__title {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 600;
+  letter-spacing: -0.028em;
+  line-height: 1.12;
+}
+
+.row__badge {
+  transform: rotate(-3deg);
+  padding: 0.1875rem 0.5rem;
+  background: var(--red);
+  color: #fff;
+  border-radius: 4px;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.row__desc {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.9375rem;
+  color: var(--body);
+}
+
+.row__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+
+.row__tag {
+  padding: 0.375rem 0.6875rem;
+  border: 1px solid var(--rule);
+  border-radius: 99px;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.row__arrow {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  transition: transform 0.12s ease;
+}
+
+/* Whole row flips to the accent colour. No shadows, no blur. */
+@media (hover: hover) {
+  .row:hover {
+    background: var(--accent);
+    color: var(--paper);
+  }
+}
+
+.row:focus-visible {
+  background: var(--accent);
+  color: var(--paper);
+  outline: 3px solid var(--ink);
+  outline-offset: -3px;
+}
+
+.row:hover .row__no,
+.row:hover .row__desc,
+.row:focus-visible .row__no,
+.row:focus-visible .row__desc {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.row:hover .row__tag,
+.row:focus-visible .row__tag {
+  border-color: rgba(255, 255, 255, 0.55);
+  color: var(--paper);
+}
+
+.row:hover .row__badge,
+.row:focus-visible .row__badge {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.row:hover .row__arrow,
+.row:focus-visible .row__arrow {
+  transform: translateX(4px);
+}
+
+/* ---------- footer ---------- */
+
+.end {
+  position: relative;
+  overflow: hidden;
+  background: var(--cobalt);
+  color: var(--paper);
+  padding: clamp(2rem, 5vw, 3.25rem) var(--pad) 0;
+}
+
+.end__cols {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+.end__label {
+  margin: 0 0 0.5rem;
+  display: inline-block;
+  padding: 0.3125rem 0.625rem;
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: 99px;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.end__body {
+  margin: 0;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.end__body a {
+  color: inherit;
+  text-decoration: none;
+  box-shadow: inset 0 -2px 0 rgba(255, 255, 255, 0.55);
+}
+
+.end__body a:hover,
+.end__body a:focus-visible {
+  box-shadow: inset 0 -2px 0 var(--paper);
+}
+
+.end__note {
+  margin: 0.4375rem 0 0;
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.end__social {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.end__social a {
+  color: var(--paper);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.end__social a:hover,
+.end__social a:focus-visible {
+  box-shadow: inset 0 -1px 0 var(--paper);
+}
+
+/* Oversized wordmark, cropped by the footer's bottom edge. */
+.end__mark {
+  margin: clamp(1rem, 2vw, 1.5rem) 0 0;
+  font-size: clamp(7rem, 34vw, 25rem);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 0.74;
+  color: rgba(255, 255, 255, 0.16);
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ---------- odds and ends ---------- */
+
+.fallback {
+  margin: 0;
+  padding: 1.25rem var(--pad);
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.875rem;
+  color: var(--body);
+}
+
+@media (max-width: 720px) {
+  .end__cols {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+}
+
+@media (max-width: 560px) {
+  /* Drop the authored line break and let the headline find its own. */
+  .lede__title br {
+    display: none;
+  }
+
+  .lede__title {
+    text-wrap: balance;
+  }
+
+  .row {
+    grid-template-columns: 1.75rem 1fr;
+    row-gap: 0.75rem;
+  }
+
+  .row__meta {
+    grid-column: 2;
+  }
+
+  .row__arrow {
+    margin-left: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.001ms !important;
+  }
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Merkle XEN — Links</title>
+  <meta name="description" content="Every link we hand out, on one page." />
+
+  <meta property="og:title" content="Merkle XEN — Links" />
+  <meta property="og:description" content="Every link we hand out, on one page." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#2041CE" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%232041CE'/%3E%3Cpath d='M8 8h14l10 13 10-13h14L38 32l18 24H42L32 43 22 56H8l18-24z' fill='%23fff'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <div class="shell">
+
+    <!-- ==========================================================
+         LOGO — this is a stand-in lockup drawn to match the brand.
+         Got the official SVG? Replace everything between the
+         <a class="bar__logo"> tags with it and delete this note.
+         ========================================================== -->
+    <header class="bar">
+      <a class="bar__logo" href="./" aria-label="Merkle XEN — home">
+        <svg viewBox="0 0 330 152" role="img" aria-hidden="true">
+          <text class="bar__logo-sup" x="56" y="34">MERKLE</text>
+          <!-- XEN, drawn as geometric letterforms -->
+          <g fill="currentColor" transform="translate(56,52)">
+            <path d="M0 0 L34 0 L60 30 L86 0 L120 0 L77 50 L120 100 L86 100 L60 70 L34 100 L0 100 L43 50 Z" />
+            <path d="M130 0 H192 V24 H160 V38 H184 V62 H160 V76 H192 V100 H130 Z" />
+            <path d="M202 0 H228 L248 44 V0 H274 V100 H248 L228 56 V100 H202 Z" />
+          </g>
+          <!-- accent wedge -->
+          <path d="M0 90 L42 90 L0 152 Z" fill="#2041CE" />
+        </svg>
+      </a>
+      <span class="bar__pill" data-profile="kicker">Link hub</span>
+    </header>
+
+    <section class="lede">
+      <h1 class="lede__title" data-profile="headline"></h1>
+      <p class="lede__sub" data-profile="tagline"></p>
+      <span class="lede__wedge" aria-hidden="true"></span>
+    </section>
+
+    <nav class="links" id="links" aria-label="Links"></nav>
+
+    <noscript>
+      <p class="fallback">
+        This page builds its list from <code>assets/links.js</code>.
+        Turn on JavaScript to see the links.
+      </p>
+    </noscript>
+
+    <footer class="end">
+      <div class="end__cols">
+        <div class="end__col">
+          <p class="end__label">What this is</p>
+          <p class="end__body" data-profile="about"></p>
+        </div>
+        <div class="end__col">
+          <p class="end__label">Get in touch</p>
+          <p class="end__body"><a data-profile="email" href="#"></a></p>
+          <p class="end__note" data-profile="emailNote"></p>
+        </div>
+        <div class="end__col">
+          <p class="end__label">Elsewhere</p>
+          <ul class="end__social" data-profile="social"></ul>
+        </div>
+      </div>
+
+      <p class="end__mark" aria-hidden="true">XEN</p>
+    </footer>
+
+  </div>
+
+  <script src="assets/links.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
