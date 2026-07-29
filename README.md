@@ -36,17 +36,15 @@ line break on wide screens; narrow screens ignore it and wrap on their own.
 
 ## The logo
 
-The lockup in `index.html` is a **stand-in**, drawn to match the brand — the
-`MERKLE` line is set in Work Sans and `XEN` is drawn as geometric paths, with
-the cobalt wedge. To use the official artwork, replace everything between the
-`<a class="bar__logo">` tags with your SVG, or point it at a file:
+`assets/logo.svg` is the official Merkle XEN Tools lockup. To swap it, drop a
+new file in at that path — nothing else needs to change.
 
-```html
-<a class="bar__logo" href="./"><img src="assets/logo.svg" alt="Merkle XEN" /></a>
-```
+The only edit made to the export was its `viewBox`, tightened from
+`0 0 1027 408` to the artwork's own bounds (`95 89 828 229`) so it can be
+sized by width without carrying ~90px of empty margin. The paths are untouched.
 
-It's the master `MERKLE XEN` lockup rather than `MERKLE XEN TOOLS`, since XEN
-Tools is one of the things listed on the page rather than the page itself.
+The lockup's wedge is `#0328D1`; the page uses the design system's cobalt
+`#2041CE` for its blue field.
 
 ## Running it
 

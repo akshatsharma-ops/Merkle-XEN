@@ -69,18 +69,10 @@ body {
   line-height: 0;
 }
 
-.bar__logo svg {
-  width: clamp(112px, 15vw, 156px);
+.bar__logo img {
+  width: clamp(150px, 21vw, 216px);
   height: auto;
   display: block;
-}
-
-.bar__logo-sup {
-  fill: currentColor;
-  font-family: inherit;
-  font-size: 30px;
-  font-weight: 700;
-  letter-spacing: 5.5px;
 }
 
 .bar__pill {
@@ -98,23 +90,6 @@ body {
 .lede {
   position: relative;
   padding: clamp(1.5rem, 5vw, 3.25rem) var(--pad) clamp(1.75rem, 4vw, 2.75rem);
-}
-
-/* Wedge lifted from the wordmark, as a flat graphic. */
-.lede__wedge {
-  position: absolute;
-  right: var(--pad);
-  bottom: clamp(1.75rem, 4vw, 2.75rem);
-  width: 68px;
-  height: 68px;
-  background: var(--cobalt);
-  clip-path: polygon(0 0, 100% 0, 0 100%);
-}
-
-@media (max-width: 900px) {
-  .lede__wedge {
-    display: none;
-  }
 }
 
 .lede__title {
